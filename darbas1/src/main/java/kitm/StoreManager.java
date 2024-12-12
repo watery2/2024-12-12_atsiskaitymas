@@ -35,7 +35,9 @@ public class StoreManager {
             i.getOrderStatistics();
         }
 
+        System.out.println("-------------------------------");
         System.out.println("Products");
+        System.out.println("-------------------------------");
 
         for (Product i : products)
         {

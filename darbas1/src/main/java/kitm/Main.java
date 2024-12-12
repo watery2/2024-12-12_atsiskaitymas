@@ -37,7 +37,22 @@ public class Main {
 
         customer1.placeOrder(order2);
 
+        Customer customer2 = new Customer("Tom", "Tom@gmail.com");
+
+        Order order3 = new Order(125);
+        order3.addProduct(electronics1, 13);
+        order3.addProduct(electronics2, 2);
+        order3.addProduct(clothing2, 1);
+        customer2.placeOrder(order3);
+
+        Order order4 = new Order(126);
+        order4.addProduct(electronics3, 5);
+        order4.addProduct(electronics1, 1);
+        order4.addProduct(clothing3, 2);
+        customer2.placeOrder(order4);
+
         storeManager.addCustomer(customer1);
+        storeManager.addCustomer(customer2);
 
         storeManager.generateReport();
 
@@ -45,12 +60,20 @@ public class Main {
 
         storeManager.generateReport();
 
+        System.out.println("-------------------------------");
+        System.out.println("FilterdedBycategory");
+        System.out.println("-------------------------------");
+
         ArrayList<Product> filterdedBycategory = ProductFilters.filterByCategory(storeManager.getProducts(), "Clothing");
 
         for (Product i : filterdedBycategory)
         {
             System.out.println(i.getName() + " " + i.getPrice() + "$");
         }
+
+        System.out.println("-------------------------------");
+        System.out.println("FilterdedByPrice");
+        System.out.println("-------------------------------");
 
         ArrayList<Product> filterdedByPrice = ProductFilters.filterByPrice(storeManager.getProducts(), 30, 260);
 

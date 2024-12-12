@@ -59,7 +59,7 @@ public class Customer {
             {
                 Product product = j.getProduct();
 
-                System.out.println("Name: " + product.getName() + " Quantity: " + j.getQuantity() + " Price: " + product.getPrice());
+                System.out.println("Name: " + product.getName() + " Quantity: " + j.getQuantity() + " Price: " + j.getSubtotal());
             }
         }
     }
